@@ -56,7 +56,8 @@ function init() {
                      entries = result.feed.entries,
                      entriesLen = entries.length,
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
-
+                     console.log(entries);
+                     console.log(entryTemplate.toString());
                  title.html(feedName);   // Set the header text
                  container.empty();      // Empty out all previous entries
 
