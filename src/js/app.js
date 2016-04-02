@@ -56,8 +56,7 @@ function init() {
                      entries = result.feed.entries,
                      entriesLen = entries.length,
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
-                     //console.log(entries);
-                     //console.log(entryTemplate.toString());
+
                  title.html(feedName);   // Set the header text
                  container.empty();      // Empty out all previous entries
 
@@ -69,8 +68,7 @@ function init() {
                  entries.forEach(function(entry) {
                      container.append(entryTemplate(entry));
                  });
-                 //console.log("data loaded from id");
-                 //console.log(id);
+
                  if (cb) {
                      cb();
                  }
@@ -121,10 +119,8 @@ $(function() {
      */
     feedList.on('click', 'a', function() {
         var item = $(this);
-        console.log(item);
+
         $('body').addClass('menu-hidden');
-        console.log(item.data);
-        console.log(item.data('id'));
         loadFeed(item.data('id'));
         return false;
     });
