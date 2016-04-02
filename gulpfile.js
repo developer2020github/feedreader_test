@@ -21,6 +21,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var html5Lint = require('gulp-html5-lint');
 var csslint = require('gulp-csslint');
+var gulpRemoveHtml = require('gulp-remove-html');
  
 
 gulp.task('lint_css', function() {
@@ -49,3 +50,40 @@ gulp.task('lint_js_log', function() {
 });
 
 
+
+//need to copy fonts 
+gulp.task('fonts', function() {
+return gulp.src('src/fonts/*.*')
+.pipe(gulp.dest('dist/fonts'))
+})
+
+gulp.task('useref', function(){
+return gulp.src('src/*.html')
+.pipe(useref())
+// Minifies only if it's a JavaScript file
+.pipe(gulpIf('*.js', uglify()))
+// Minifies only if it's a CSS file
+.pipe(gulpIf('*.css', cssnano()))
+.pipe(gulp.dest('dist'))
+});
+
+//do this on the dest file - it will be already copied and 
+//updated once by useref
+gulp.task('build-html', function () {
+  return gulp.src('dist/index.html')
+    .pipe(gulpRemoveHtml())
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist/'));
+});
+
+//clean up dist if needed
+gulp.task('clean:dist', function() {
+return del.sync('dist');
+})
+
+gulp.task('build', function (callback) {
+runSequence('clean:dist',
+['useref', 'fonts'],'build-html',
+callback
+)
+})
