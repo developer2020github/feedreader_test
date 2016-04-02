@@ -1,6 +1,21 @@
-# Project Overview
+============================================================
+#Project overview 
+This project is a part of Udacity front-end nanodegree. 
+The purpose is to develop tests, using jasmine test framework 
+that would cover functionality of Udacity-provided application
+(udacity feedreader).
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+April 2016  
+
+=============================================================
+#Build process
+
+=============================================================
+#Running application 
+Please open index.html in a browser. Wait for jasmine tests to complete.
+Scroll down to the bottom of the page and ensure all tests passed. 
+
+
 
 
 ## Why this Project?

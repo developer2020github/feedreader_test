@@ -147,10 +147,10 @@ $(function() {
                 if ($.inArray(val, a2) === -1) {
                     allFound = false;
                     return false;
-                };
+                }
             });
             return allFound;
-        };
+        }
 
         //helper function - used to compare previous and current content arrays 
         function allValuesInArraysMatch(a1, a2) {
@@ -164,10 +164,16 @@ $(function() {
 
         //main test - loop through list of feeds, reload and see if newly loaded 
         //content differes from previous one
+        
+        //Linter gives error " Don't make functions within a loop"
+        //Since this code does not get released, this is not a big deal.
+        //However, moved check function definition out of the loop anyway.
+        var checkExpectation = function(){
+            expect(allValuesInArraysMatch(previousContent, currentContent)).toBe(false);
+        };
+
         for (var j = 1; j < numberOfFeeds; j++) {
-            it('content changes when feed ' + (j + 1).toString() + ' of ' + (numberOfFeeds).toString() + ' is selected', function() {
-                expect(allValuesInArraysMatch(previousContent, currentContent)).toBe(false);
-            });
+            it('content changes when feed ' + (j + 1).toString() + ' of ' + (numberOfFeeds).toString() + ' is selected', checkExpectation);
         }
 
     });
