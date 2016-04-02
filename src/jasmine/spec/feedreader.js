@@ -79,38 +79,98 @@ $(function() {
 
     });
 
-    /* This test suite tests  initial Entries */
+    /* This test suite chck  initial entries */
     describe('Initial entries', function() {
+
         /* this test  ensures that when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
-    
+
         beforeEach(function(done) {
 
-                loadFeed(0, function(){
-                     done();
-                });
-               
+            loadFeed(0, function() {
+                done();
+            });
         });
 
-    it('there is at least one entry element', function() {
-
-        var container = $('.feed');
-
-        expect(container.children().length > 0).toBe(true);
-       
+        it('Feed container is not empty after initalization', function() {
+            var container = $('.feed');
+            expect(container.children().length > 0).toBe(true);
+        });
     });
 
+    /*This test suite checks that content changes when a new feed is loaded*/
+    describe('New Feed Selection', function() {
 
-    /* TODO: Write a new test suite named "New Feed Selection"
+        var currentContent = Array(); //represents curretn content
+        var previousContent = Array(); //content with previous feed
+        var currentFeedId = 0; //index of feed loaded at current step 
+        var numberOfFeeds = allFeeds.length;
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        /* This function reads content currently in the DOM and puts into currentContent array*/
+        function loadCurrentContent() {
+            currentContent = [];
+            var container = $('.feed');
+            var childr = container.children();
+            for (var i = 0; i < container.children().length; i++) {
+                //can define conent strign differently if needed
+                currentContent.push(childr[i].getElementsByTagName('h2')[0].innerText);
+            }
+        }
+
+        //load initial content once 
+        beforeAll(function(done) {
+
+            loadFeed(currentFeedId, function() {
+                loadCurrentContent();
+                currentFeedId++;
+                done();
+            });
+        });
+
+        //run before each test - load new content into currentContent array
+        //and save current content into previous content
+        beforeEach(function(done) {
+            loadFeed(currentFeedId, function() {
+                previousContent = currentContent.slice();
+                loadCurrentContent();
+                currentFeedId++;
+                done();
+            });
+        });
+
+        //helper function - used to compare previous and current content arrays 
+        function allValuesOfArray1FoundInArray2(a1, a2) {
+            var allFound = true;
+            $.each(a1, function(idx, val) {
+                if ($.inArray(val, a2) === -1) {
+                    allFound = false;
+                    return false;
+                };
+            });
+            return allFound;
+        };
+
+        //helper function - used to compare previous and current content arrays 
+        function allValuesInArraysMatch(a1, a2) {
+            var allMatch = true;
+            allMatch = allValuesOfArray1FoundInArray2(a1, a2);
+            if (allMatch) {
+                allMatch = allValuesOfArray1FoundInArray2(a2, a1);
+            }
+            return allMatch;
+        }
+
+        //main test - loop through list of feeds, reload and see if newly loaded 
+        //content differes from previous one
+        for (var j = 1; j < numberOfFeeds; j++) {
+            it('content changes when feed ' + (j + 1).toString() + ' of ' + (numberOfFeeds).toString() + ' is selected', function() {
+                expect(allValuesInArraysMatch(previousContent, currentContent)).toBe(false);
+            });
+        }
 
     });
+
 
 }());
-
