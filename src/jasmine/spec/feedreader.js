@@ -1,3 +1,7 @@
+/*========================================================
+Author:  developer2020 
+e-mail:  dev276236@gmail.com
+//=======================================================*/
 /* feedreader.js
  *
  * This is the spec file that Jasmine will read and contains
@@ -33,8 +37,7 @@ $(function() {
          */
         it('each  feed URL is defined and not empty', function() {
             for (var i = 0, len = allFeeds.length; i < len; i++) {
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe("");
+                expect(allFeeds[i].url).toBeTruthy();
             }
         });
 
@@ -45,8 +48,7 @@ $(function() {
          */
         it('each  feed name is defined and not empty', function() {
             for (var i = 0, len = allFeeds.length; i < len; i++) {
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name).not.toBe("");
+                expect(allFeeds[i].name).toBeTruthy();
             }
         });
 
@@ -88,10 +90,7 @@ $(function() {
          */
 
         beforeEach(function(done) {
-
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('Feed container is not empty after initalization', function() {
@@ -114,7 +113,7 @@ $(function() {
             var container = $('.feed');
             var childr = container.children();
             for (var i = 0; i < container.children().length; i++) {
-                //can define conent strign differently if needed
+                //can define content string differently if needed
                 currentContent.push(childr[i].getElementsByTagName('h2')[0].innerText);
             }
         }

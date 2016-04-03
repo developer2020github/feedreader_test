@@ -1,7 +1,7 @@
 {
   "name": "main",
   "version": "1.0.0",
-  "description": "bus trip planner",
+  "description": "feedreader_test",
   "main": "index.js",
   "scripts": {
     "test": "test"

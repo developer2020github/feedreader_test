@@ -1,12 +1,18 @@
 ============================================================
+Author:  developer2020 
+e-mail:  dev276236@gmail.com
+date:    April 2016 
+============================================================
 #Project overview 
-This project is a part of Udacity front-end nano-degree. 
-The purpose is to develop tests, using jasmine test framework 
+This project was done by developer2020 as a part of Udacity front-end nano-degree. 
+The purpose was to develop tests, using Jasmine test framework 
 that would cover functionality of Udacity-provided application
 (Udacity feed reader). 
-
-April 2016  
-
+=============================================================
+#Technologies&tools used: 
+jQuery 
+Jasmine 
+Gulp
 =============================================================
 #Installing and building  the application.
 
