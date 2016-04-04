@@ -1,21 +1,18 @@
 ##Project title
 Jasmine tests demo
+By: developer2020
 ##Overview 
 This project was done by developer2020 as a part of Udacity front-end nano-degree. 
 The purpose was to develop tests, using Jasmine test framework 
 that would cover functionality of Udacity provided application Udacity feed reader. 
-
+Code written by developer2020 can be found in feedreader.js.
 ###Contact information
-Author:  developer2020
 e-mail:  dev276236@gmail.com
-
-###Buit with
+###Built with
 * jQuery 
 * Jasmine 
 * Gulp
-
 ###Installing and building  the application.
-
 Application utilizes Gulp for builds.  Note all test code is removed during the build process.
 There are two main subfolders: 
 src - sources with all libraries 
@@ -25,7 +22,7 @@ To ensure all the required components are installed:
 
 0. Ensure you have node. js and npm installed. 
 Refer to https://docs.npmjs.com/getting-started/installing-node for installation instructions. 
-1. Please extract provided archive file. 
+1. Get project from GitHub. 
 2. In the main directory (one level up of src and dist) run command 
 "npm install"
 This will download and install all the gulp packages required for builds. 
