@@ -36,20 +36,22 @@ To re-build the application:
 This will clean up files in dist directory and rebuild the application. 
 
 ###Running application.
-To check results of Jasmine tests: 
+*To check results of Jasmine tests*
+
 Please open index.html, located in src directory,  in a browser. Wait for Jasmine tests to complete.
 Scroll down to the bottom of the page and verify that all tests passed. 
 All tests developed can be found in the feedreader.js file of jasmine\spec folder
 
-To check functionality of release version of the application: 
+*To check functionality of release version of the application*
+
 Please open open index.html, located in dist directory,  in a browser.
 
-You also may use  local server:
+*You also may use  local server*
+
 This procedure applies to Python 3, for Python 2 please google corresponding command for step 2:  
-1. Run local server: 
+* Run local server: 
 cd /path/to/project-folder/dist
 python -m http.server 8080
-
-2. Open a browser and visit localhost:8080
+*  Open a browser and visit localhost:8080
 
 
