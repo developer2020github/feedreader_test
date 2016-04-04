@@ -1,21 +1,20 @@
-#Project title
+##Project title
 Jasmine tests demo
-#Project overview 
+##Overview 
 This project was done by developer2020 as a part of Udacity front-end nano-degree. 
 The purpose was to develop tests, using Jasmine test framework 
-that would cover functionality of Udacity-provided application
-(Udacity feed reader). 
-==============================================================
-#Contact information
+that would cover functionality of Udacity provided application Udacity feed reader. 
+
+###Contact information
 Author:  developer2020 
 e-mail:  dev276236@gmail.com
-=============================================================
-#Buit with
+
+###Buit with
 *jQuery 
 *Jasmine 
 *Gulp
-=============================================================
-#Installing and building  the application.
+
+###Installing and building  the application.
 
 Application utilizes Gulp for builds.  Note all test code is removed during the build process.
 There are two main subfolders: 
@@ -36,8 +35,7 @@ To re-build the application:
 "gulp build"
 This will clean up files in dist directory and rebuild the application. 
 
-=============================================================
-#Running application.
+###Running application.
  
 To check results of Jasmine tests: 
 Please open index.html, located in src directory,  in a browser. Wait for Jasmine tests to complete.
