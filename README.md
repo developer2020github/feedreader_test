@@ -6,13 +6,13 @@ The purpose was to develop tests, using Jasmine test framework
 that would cover functionality of Udacity provided application Udacity feed reader. 
 
 ###Contact information
-Author:  developer2020 
+Author:  developer2020
 e-mail:  dev276236@gmail.com
 
 ###Buit with
-*jQuery 
-*Jasmine 
-*Gulp
+* jQuery 
+* Jasmine 
+* Gulp
 
 ###Installing and building  the application.
 
