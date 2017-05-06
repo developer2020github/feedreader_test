@@ -7,15 +7,15 @@ The purpose was to develop tests, using Jasmine test framework
 that would cover functionality of Udacity provided application Udacity feed reader. 
 Code written by developer2020 can be found in feedreader.js.
 
-###Contact information
+### Contact information
 e-mail:  dev276236@gmail.com
 
-###Built with
+### Built with
 * jQuery 
 * Jasmine 
 * Gulp
 
-###Installing and building  the application.
+### Installing and building  the application.
 Application utilizes Gulp for builds.  Note all test code is removed during the build process.
 There are two main subfolders: 
 src - sources with all libraries 
@@ -35,7 +35,7 @@ To re-build the application:
 "gulp build"
 This will clean up files in dist directory and rebuild the application. 
 
-###Running application.
+### Running application.
 *To check results of Jasmine tests*
 
 Please open index.html, located in src directory,  in a browser. Wait for Jasmine tests to complete.
