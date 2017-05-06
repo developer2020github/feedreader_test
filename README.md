@@ -1,7 +1,7 @@
-##Project title
+## Project title
 Jasmine tests demo
 
-##Overview 
+## Overview 
 This project was done by developer2020 as a part of Udacity front-end nano-degree. 
 The purpose was to develop tests, using Jasmine test framework 
 that would cover functionality of Udacity provided application Udacity feed reader. 
